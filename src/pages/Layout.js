@@ -6,7 +6,7 @@ function Layout() {
     return (
         <main className="h-screen flex-col ">
             <Search/>
-            <div className=" h-[calc(100vh-9rem)]">
+            <div className=" h-[calc(100vh-6rem)]">
             <Outlet />
             </div>
             <Navbar />
