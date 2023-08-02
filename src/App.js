@@ -1,7 +1,7 @@
 import "./App.css";
 import Searchs from "./pages/Searchs";
 import Notification from "./pages/Notification";
-import Favorite from "./pages/Favorite";
+import Favorite from "./pages/Basket";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
@@ -19,7 +19,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="/search" element={<Searchs/>}/>
                     <Route path="/notification" element={<Notification/>}/>
-                    <Route path="/favorite" element={<Favorite/>}/>
+                    <Route path="/basket" element={<Favorite/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                 </Route>
             </Routes>
