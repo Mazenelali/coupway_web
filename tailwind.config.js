@@ -9,6 +9,7 @@ module.exports = {
     extend: {
         colors: {
           'light-green': '#13D0CA',
+          'light-gray' : '#f2f2f2'
         },
     },
   },
