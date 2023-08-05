@@ -11,12 +11,14 @@ import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-    const [activeLink, setActiveLink] = useState("/"); 
+    const [activeLink, setActiveLink] = useState("/home"); 
 
+
+    
     let NavLinks = [
         {
             icon: <MdOutlineHome />,
-            path: "/",
+            path: "/home",
             active: <IoMdHome />,
         },
         {

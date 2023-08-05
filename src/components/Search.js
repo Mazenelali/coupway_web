@@ -4,7 +4,7 @@ import { VscLocation } from "react-icons/vsc";
 function Search() {
     return (
         
-        <div className="w-screen flex items-center fixed top-0  justify-center h-16 bg-light-green ">
+        <div className="w-screen flex items-center fixed top-0 z-10 justify-center h-16 bg-light-green ">
             <div className="flex items-center w-[80%] h-[35px] mt-2 bg-white shadow-inner shadow-gray-300">
                 <label className="p-2">
                     <HiOutlineSearch className=" text-light-green text-xl" />

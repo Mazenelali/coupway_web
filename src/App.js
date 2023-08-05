@@ -8,6 +8,7 @@ import Layout from "./pages/Layout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WelcomePage from "./pages/WelcomePage";
 
 function App() {
     return (
@@ -15,8 +16,9 @@ function App() {
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route index element={<WelcomePage/>} />
                 <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="/search" element={<Searchs/>}/>
                     <Route path="/notification" element={<Notification/>}/>
                     <Route path="/basket" element={<Favorite/>}/>

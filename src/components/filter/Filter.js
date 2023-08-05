@@ -16,7 +16,7 @@ function Filter() {
 
     return (
         <div className=" overflow-hidden ">
-            <div className="w-screen h-10 fixed top-16 border-b-[1px] border-gray-400 flex items-center bg-white justify-center space-x-4">
+            <div className="w-screen h-10 fixed z-10 top-16 border-b-[1px] border-gray-400 flex items-center bg-white justify-center space-x-4">
                 <button
                     className={`text-xs border-dashed border-[1px] border-gray-400 text  space-x-1 max-w-[70px] h-6 flex items-center ${
                         activeFilter === "deals"
