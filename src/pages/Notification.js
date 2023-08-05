@@ -1,6 +1,8 @@
+import NotificationCard from "../components/NotificationCard";
+
 function Notification() {
     return ( 
-        <>Notification</>
+        <NotificationCard/>
      );
 }
 
