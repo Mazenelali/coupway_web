@@ -24,7 +24,7 @@ const NotificationCard = () => {
           <div>
             <p className="text-xs uppercase">Deal Price</p>
             <p className='flex'>
-              <span className="line-through text-light-green "><p className='text-black'>100$</p></span> -{' '}
+              <span className="line-through text-light-green "><span className='text-black'>100$</span></span> -{' '}
               <span className="text-light-green">80$</span>
             </p>
           </div>

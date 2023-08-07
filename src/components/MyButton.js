@@ -4,7 +4,7 @@ function MyButton(props) {
   return (
     <button
       {...props}
-      className="bg-light-green w-full text-white py-2 font-bold"
+      className={`${props.color} w-full text-white py-2 font-bold`}
     >
       {props.name}
     </button>
