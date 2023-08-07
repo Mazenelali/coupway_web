@@ -46,6 +46,7 @@ function Navbar() {
     return (
         <nav className="w-screen h-8 flex text-2xl justify-center fixed bottom-0 z-10  items-center space-x-10 text-slate-50 bg-light-green">
             {NavLinks.map((eachLink) => (
+                
                 <NavLink
                     key={eachLink.path}
                     to={eachLink.path}

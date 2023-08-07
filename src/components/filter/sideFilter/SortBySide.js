@@ -11,14 +11,14 @@ function SortBySide() {
                         <span className="mb-1 text-dark-gray ml-2">
                             Preuminm Deals
                         </span>{" "}
-                        <th className=" h-[0.1px] w-[168px] bg-dark-gray" />{" "}
+                        
                     </button>
                     <button className=" flex flex-col items-start ">
                         {" "}
                         <span className="mb-1 text-dark-gray ml-2">
                             Deals
                         </span>{" "}
-                        <th className=" h-[0.1px] w-[168px] bg-dark-gray" />{" "}
+                        
                     </button>
                 </div>
             </div>
