@@ -45,7 +45,7 @@ function ChangePassword() {
 function ValidationBullet({ valid, text }) {
     return (
         <span className="flex gap-3 items-center">
-            <p className={`w-3 h-3 rounded-3xl ${valid ? "bg-light-green" : "bg-transparent"}`} />
+            <p className={`w-3 h-3 rounded-3xl ${valid ? "bg-light-green" : "bg-dark-gray"}`} />
             {text}
         </span>
     );

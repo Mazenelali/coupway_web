@@ -2,6 +2,15 @@ import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
+import {RiLock2Line} from "react-icons/ri"
+import{LiaShoppingBagSolid} from "react-icons/lia"
+import {MdSettingsPhone} from "react-icons/md"
+import {MdOutlinePayment} from "react-icons/md"
+import {BsFillStickyFill} from "react-icons/bs"
+import {MdGroups2} from "react-icons/md"
+import {BsInfoCircleFill} from "react-icons/bs"
+import {IoSettingsSharp} from "react-icons/io5"
+import {PiSignOut} from "react-icons/pi"
 
 function Profile() {
     const [userType, setUserType] = useState("user");
@@ -9,22 +18,23 @@ function Profile() {
     const socialLinks =
         userType === "user"
             ? [
-                { icon: "", link: "mycoupons", word: "My Coupons" },
-                { icon: "", link: "mydetails", word: "My Details" },
-                { icon: "", link: "changePassword", word: "Change Password" },
-                { icon: "", link: "contactUs", word: "Contact Us" },
-                { icon: "", link: "socialAccounts", word: "Social Accounts" },
-                { icon: "", link: "aboutus", word: "About Us" },
+                { icon: <LiaShoppingBagSolid/>, link: "mycoupons", word: "My Coupons" },
+                { icon: <BsFillStickyFill/>, link: "mydetails", word: "My Details" },
+                { icon: <RiLock2Line/>, link: "changePassword", word: "Change Password" },
+                { icon: <MdSettingsPhone/> , link: "contactUs", word: "Contact Us" },
+                { icon: <MdOutlinePayment/>, link: "paymentMethod", word: "Payment Method" },
+                { icon: <MdGroups2/>, link: "socialAccounts", word: "Social Accounts" },
+                { icon: <BsInfoCircleFill/>, link: "aboutus", word: "About Us" },
             ]
             : [
-                { icon: "", link: "contactUs", word: "Contact Us" },
-                { icon: "", link: "socialAccounts", word: "Social Accounts" },
-                { icon: "", link: "aboutus", word: "About Us" },
+                { icon: <MdSettingsPhone/>, link: "contactUs", word: "Contact Us" },
+                { icon: <MdGroups2/>, link: "socialAccounts", word: "Social Accounts" },
+                { icon: <BsInfoCircleFill/>, link: "aboutus", word: "About Us" },
             ];
 
     const settings = [
-        { icon: "", link: "setting", word: "Settings" },
-        { icon: "", link: "signIn", word: "Sign In" },
+        { icon: <IoSettingsSharp/>, link: "setting", word: "Settings" },
+        { icon: <PiSignOut/>, link: "signIn", word: "Sign In" },
     ];
 
     return (
@@ -36,14 +46,15 @@ function Profile() {
                 </div>
                 <div className="absolute -bottom-16 -left-4 w-[120%] h-16 bg-dark-gray opacity-20"></div>
             </div>
-            <div className="w-full flex gap-3 mt-20 flex-col relative z-10">
+            <div className="w-full flex gap-3 mt-32 flex-col relative z-10">
                 <div className="bg-white">
                     {socialLinks.map((element, index) => (
                         <Link
-                            className="flex justify-end items-center"
+                            className="flex gap-1 justify-end items-center"
                             key={index}
                             to={element.link}
                         >
+                            <span className="text-light-green text-xl">{element.icon}</span> 
                             <span className="pl-6 w-3/4 border-b-[1px] py-3 border-light-gray flex items-center">
                                 {element.word}
                             </span>
@@ -54,10 +65,11 @@ function Profile() {
                 <div className="bg-white">
                     {settings.map((item, index) => (
                         <Link 
-                            className="flex justify-end items-center"
+                            className="flex gap-1 justify-end items-center"
                             key={index}
                             to = {item.link}
                         >
+                            <span className="text-light-green text-xl">{item.icon}</span> 
                             <span className="pl-6 w-3/4 border-b-[1px] py-3 border-light-gray">
                                 {item.word}
                             </span>

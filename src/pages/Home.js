@@ -1,4 +1,4 @@
-import ProducteCart from "../components/ProducteCart";
+import ProducteCart from "../components/Cards/ProducteCart";
 
 let countProduct = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
