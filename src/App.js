@@ -14,7 +14,9 @@ import ProfileLayout from "./pages/profile/ProfileLayout";
 import ChangePassword from "./pages/profile/profilePages/ChangePassword";
 import ContactUs from "./pages/profile/profilePages/ContactUs";
 import MyCoupons from "./pages/profile/profilePages/MyCoupons/couponsPages/MyCoupons";
-import MyDetails from "./pages/profile/profilePages/MyDetails";
+import MyDetails from "./pages/profile/profilePages/MyDetails/MyDetails";
+import MyAddress from "./pages/profile/profilePages/MyDetails/MyAddress";
+import NewAddress from "./pages/profile/profilePages/MyDetails/NewAddress"
 import SignIn from "./pages/profile/profilePages/SignIn";
 import SocialAccounts from "./pages/profile/profilePages/SocialAccounts";
 import AboutUs from "./pages/profile/profilePages/AboutUs";
@@ -49,7 +51,11 @@ function App() {
                             <Route path="reservedDeals" element={<ReservedDeals/>}/>
                             <Route path="usedDeals" element={<UsedDeals/>}/>
                         </Route>
-                        <Route path="mydetails" element={<MyDetails/>} />
+                        <Route path="mydetails">
+                            <Route path="" element={<MyDetails/>} />
+                            <Route path="myaddress" element={<MyAddress/>} />
+                            <Route path="newaddress" element={<NewAddress/>} />
+                        </Route>
                         <Route path="signIn" element={<SignIn/>} />
                         <Route path="socialaccounts" element={<SocialAccounts/>} />
                         <Route path="aboutUs" element={<AboutUs/>} />
