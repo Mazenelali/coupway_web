@@ -1,4 +1,4 @@
-import NotificationCard from "../components/NotificationCard";
+import NotificationCard from "../components/Cards/NotificationCard";
 
 function Notification() {
     return ( 

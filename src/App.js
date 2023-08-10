@@ -22,6 +22,7 @@ import CouponsLayout from "./pages/profile/profilePages/MyCoupons/CouponsLayout"
 import PrushadeDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/PrushadDeals";
 import ReservedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/ReservedDeals";
 import UsedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/UsedDeals";
+import PaymentMethod from "./pages/profile/profilePages/PaymentMethod";
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                         {/* Nested route under /profile */}
                         <Route index element={<Profile />} />
                         <Route path="setting" element={<Setting />} />
+                        <Route path="paymentMethod" element={<PaymentMethod />} />
                         <Route path="changePassword" element={<ChangePassword/>} />
                         <Route path="contactUs" element={<ContactUs/>} />
                         <Route path="mycoupons" element={<CouponsLayout/>} >

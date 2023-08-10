@@ -1,6 +1,6 @@
 function ProducteCart(props) {
     return (
-        <div className={` ${ props.MakeSmal === true ? `w-[167px] h-32`:`w-[350px] h-56`} flex items-center  justify-center bg-gradient-to-br from-dark-gray from-20% via-light-gray via-30% to-white to-90%` }>
+        <div className={` ${ props.MakeSmal === true ? `w-[167px] h-32`:`w-[350px] h-56`} flex items-center  justify-center bg-gradient-to-br from-dark-gray from-20% via-light-gray via-30% to-white to-90% ` }>
             <div
                 className={` w-[96%] h-[94%] bg-white relative  border-dark-gray overflow-hidden  before:absolute before:-bottom-1 before:-left-5 before:right-0 ${ props.MakeSmal === true ? `before:w-[200%]   before:h-[65px]` : `before:w-[200%]   before:h-[110px]`} before:-rotate-6 
         before:bg-gradient-to-br from-light-gray from-5% via-light-gray via-30% to-white to-90% `}
