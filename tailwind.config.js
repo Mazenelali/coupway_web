@@ -12,6 +12,8 @@ module.exports = {
           'dark-green': '#15B5AB',
           'light-gray' : '#f2f2f2',
           'dark-gray' : '#959595',
+          'label-gray':'#9f9f9f',
+          'dimmer':"#36363699"
         },
     },
   },
