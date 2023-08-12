@@ -25,6 +25,7 @@ import PrushadeDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/P
 import ReservedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/ReservedDeals";
 import UsedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/UsedDeals";
 import PaymentMethod from "./pages/profile/profilePages/PaymentMethod";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
     return (
@@ -38,6 +39,7 @@ function App() {
                     <Route path="/search" element={<Searchs />} />
                     <Route path="/notification" element={<Notification />} />
                     <Route path="/basket" element={<Favorite />} />
+                    <Route path="/product" element={<ProductPage />} />
                     <Route path="/profile" element={<ProfileLayout />}>
                         {/* Nested route under /profile */}
                         <Route index element={<Profile />} />

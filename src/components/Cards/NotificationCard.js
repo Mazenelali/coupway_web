@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 const NotificationCard = () => {
   return (
@@ -37,7 +38,7 @@ const NotificationCard = () => {
       </div>
       <div className="flex justify-center items-center basis-[5%] ml-auto">
         {/* Assuming you have imported the MaterialIcons properly */}
-        {/* <MaterialIcons name="keyboard-arrow-right" {...iconStyles} /> */}
+        <MdOutlineArrowForwardIos className="text-light-green"/>
       </div>
     </div>
   );

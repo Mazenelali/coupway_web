@@ -1,8 +1,8 @@
-import Input from "../../../../components/inputs/InputsOfProfile"
-import AddressCard from "../../../../components/AddressCard"
-import React from "react";
+import AddressCard from "../../../../components/Cards/AddressCard"
+import { useState } from "react";
+
 function MyAddress() {
-    const [myAddress,setMyAddress]=React.useState([{
+    const [myAddress,setMyAddress]=useState([{
         "FN":"Maria",
         "LN":"Khoury",
         "email":"maria@khoury.com",

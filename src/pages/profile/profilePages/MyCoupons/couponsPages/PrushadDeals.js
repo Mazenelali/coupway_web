@@ -2,7 +2,7 @@ import CouponsCard from "../../../../../components/Cards/CouponsCard";
 
 function PrushadeDeals() {
     return ( 
-    <div className="p-2 pt-4">
+    <div className="p-2 pt-14">
 
     <CouponsCard  borderLightBlue={true}/>
 
