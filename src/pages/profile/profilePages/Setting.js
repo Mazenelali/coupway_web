@@ -85,13 +85,13 @@ function Setting () {
     const setSize=(size)=>{
         setMySettings({...mySettings,'size':size})
     }
-    return ( <div>
+    return ( <div className="pt-14">
         <div className={`w-56 h-screen z-10 bg-white absolute transition-all -right-56 ${ activeFilter === 'country' ? '-translate-x-56' : ''}`}><CountrySide handler={setCountry} countries={countries} current_country={mySettings.country}/></div>
         <div className={`w-56 h-screen z-10 bg-white absolute transition-all -right-56 ${ activeFilter === 'currency' ? '-translate-x-56' : ''}`}><CurrencySide handler={setCurrency} currencies={currencies} current_currency={mySettings.currency}/></div>
         <div className={`w-56 h-screen z-10 bg-white absolute transition-all -right-56 ${ activeFilter === 'size' ? '-translate-x-56' : ''}`}><SizeSide handler={setSize} sizes={sizes} current_size={mySettings.size}/></div>
 
         <div className={`w-screen h-screen z-9 absolute bg-dimmer ${ activeFilter != null ? 'block' : 'hidden'}`} onClick={()=>handleFilterClick(null)}></div>
-        <div className="bg-white mt-4 mb-4">
+        <div className="bg-white mb-4">
             <h3 className="pl-4 font-semibold">Store Setting</h3>
             <div className="border-b-2 border-dark-gray pl-4 pr-2 pb-2 pt-2">
                 <div onClick={()=>handleFilterClick('country')}>Country</div>
