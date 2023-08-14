@@ -26,6 +26,9 @@ import ReservedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/R
 import UsedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/UsedDeals";
 import PaymentMethod from "./pages/profile/profilePages/PaymentMethod";
 import ProductPage from "./pages/ProductPage";
+import TermsandConditions from "./pages/profile/profilePages/TermsandConfitions"
+import AboutCoupway from "./pages/profile/profilePages/AboutCoupway"
+import Checkout from "./pages/profile/profilePages/Checkout";
 
 function App() {
     return (
@@ -45,6 +48,7 @@ function App() {
                         <Route index element={<Profile />} />
                         <Route path="setting" element={<Setting />} />
                         <Route path="paymentMethod" element={<PaymentMethod />} />
+                        <Route path="checkout" element={<Checkout/>} />
                         <Route path="changePassword" element={<ChangePassword/>} />
                         <Route path="contactUs" element={<ContactUs/>} />
                         <Route path="mycoupons" element={<CouponsLayout/>} >
@@ -61,6 +65,9 @@ function App() {
                         <Route path="signIn" element={<SignIn/>} />
                         <Route path="socialaccounts" element={<SocialAccounts/>} />
                         <Route path="aboutUs" element={<AboutUs/>} />
+                        <Route path="aboutCoupway" element={<AboutCoupway/>} />
+                        <Route path="termsandconditions" element={<TermsandConditions/>} />
+
                     </Route>
                 </Route>
             </Routes>
