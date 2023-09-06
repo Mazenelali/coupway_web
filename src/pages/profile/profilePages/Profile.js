@@ -12,7 +12,7 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { PiSignOut } from "react-icons/pi";
 
 function Profile() {
-    const [userType, setUserType] = useState("user");
+    const [userType, setUserType] = useState("gest");
 
     const socialLinks =
         userType === "user"
@@ -64,7 +64,7 @@ function Profile() {
 
     const settings = [
         { icon: <IoSettingsSharp />, link: "setting", word: "Settings" },
-        { icon: <PiSignOut />, link: "signIn", word: userType === "user" ? "Sing out" : "Sign in" },
+        { icon: <PiSignOut />, link: userType==="user" ? "/login" : "/register", word: userType === "user" ? "Sing out" : "Sign Up" },
     ];
 
     return (

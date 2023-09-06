@@ -1,6 +1,6 @@
 import CouponsCard from "../../../../../components/Cards/CouponsCard";
 
-function PrushadeDeals() {
+function PurchasedDeals() {
     return ( 
     <div className="p-2 pt-14">
 
@@ -9,4 +9,4 @@ function PrushadeDeals() {
     </div> );
 }
 
-export default PrushadeDeals;
+export default PurchasedDeals;

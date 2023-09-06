@@ -21,7 +21,7 @@ import SignIn from "./pages/profile/profilePages/SignIn";
 import SocialAccounts from "./pages/profile/profilePages/SocialAccounts";
 import AboutUs from "./pages/profile/profilePages/AboutUs";
 import CouponsLayout from "./pages/profile/profilePages/MyCoupons/CouponsLayout";
-import PrushadeDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/PrushadDeals";
+import PurchasedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/PurchasedDeals";
 import ReservedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/ReservedDeals";
 import UsedDeals from "./pages/profile/profilePages/MyCoupons/couponsPages/UsedDeals";
 import PaymentMethod from "./pages/profile/profilePages/PaymentMethod";
@@ -30,8 +30,10 @@ import TermsandConditions from "./pages/profile/profilePages/TermsandConfitions"
 import AboutCoupway from "./pages/profile/profilePages/AboutCoupway"
 import Checkout from "./pages/profile/profilePages/Checkout";
 
+
 function App() {
     return (
+
         <BrowserRouter>
             <Routes>
                 <Route path="/register" element={<Register />} />
@@ -53,7 +55,7 @@ function App() {
                         <Route path="contactUs" element={<ContactUs/>} />
                         <Route path="mycoupons" element={<CouponsLayout/>} >
                             <Route index element={<MyCoupons/>}/>
-                            <Route path="pruchadeDeals" element={<PrushadeDeals/>}/>
+                            <Route path="purchasedDeals" element={<PurchasedDeals/>}/>
                             <Route path="reservedDeals" element={<ReservedDeals/>}/>
                             <Route path="usedDeals" element={<UsedDeals/>}/>
                         </Route>

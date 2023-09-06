@@ -6,7 +6,8 @@ import Filter from "../components/filter/Filter";
 import Header from "../components/header";
 
 function Layout() {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisibleSearchBar, setIsVisibleSearchBar] = useState(true);
+    const [isVisibleFilterBar, setIsVisibleFilterBar] = useState(true);
     const [showArrow, setShowArrow] = useState(false);
     const [title, setTitle] = useState("");
     const [backLocation, setBackLocation] = useState("");
@@ -15,14 +16,14 @@ function Layout() {
     const currentPath = location.pathname;
 
     useEffect(() => {
-        setIsVisible(currentPath === "/home");
+        setIsVisibleSearchBar(currentPath === "/home" || currentPath === "/search" );
+        setIsVisibleFilterBar(currentPath === "/home")
         setShowNav(currentPath === "/product");
         const pathTitleMap = {
-            "/search": "Search",
             "/notification": "Notification",
             "/basket": "Basket",
             "/profile/mycoupons": "My Coupons",
-            "/profile/mycoupons/pruchadeDeals": "Purchased Deals",
+            "/profile/mycoupons/purchasedDeals": "Purchased Deals",
             "/profile/mycoupons/reservedDeals": "Reserved Deals",
             "/profile/mycoupons/usedDeals": "Used Deals",
             "/profile/mydetails": "My Details",
@@ -36,7 +37,7 @@ function Layout() {
         setTitle(pathTitleMap[currentPath] || "");
 
         const pathsWithArrow = [
-            "/profile/mycoupons/pruchadeDeals",
+            "/profile/mycoupons/purchasedDeals",
             "/profile/mycoupons/usedDeals",
             "/profile/mycoupons/reservedDeals",
             "/profile/mydetails",
@@ -51,7 +52,7 @@ function Layout() {
         setShowArrow(pathsWithArrow.includes(currentPath));
 
         const profilePaths = {
-            "/profile/mycoupons/pruchadeDeals": "/profile/mycoupons",
+            "/profile/mycoupons/purchasedDeals": "/profile/mycoupons",
             "/profile/mycoupons/usedDeals": "/profile/mycoupons",
             "/profile/mycoupons/reservedDeals": "/profile/mycoupons",
             "/profile/mydetails": "/profile",
@@ -69,13 +70,14 @@ function Layout() {
 
     return (
         <main className="h-screen w-screen fixed top-0 right-0 z-0">
-            {isVisible && (
-                <>
-                    <Search />
-                    <Filter />
-                </>
-            )}
-            {!isVisible && (
+            {isVisibleSearchBar &&
+                <Search />
+            }
+            {
+                isVisibleFilterBar &&
+                <Filter/>
+            }
+            {!isVisibleSearchBar && (
                 <Header
                     title={title}
                     isVisible={showArrow}
