@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+
 
 function MyCoupons() {
     const couponsOptins = [{
-        option:"pruchade deals",
-        link :"pruchadeDeals"
+        option:"purchased deals",
+        link :"purchasedDeals"
     },{
         option:"reserved deals",
         link :"reservedDeals"

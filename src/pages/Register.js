@@ -36,9 +36,17 @@ function Register() {
         setShowPassword((prevState) => !prevState);
     };
 
+    const [dataRegister ,setDataRegister] = useState({
+        email:''
+    })
+    console.log(dataRegister)
+
+    
+
+
     return (
         <div>
-            {console.log(years)}
+            
             <div className="bg-white mx-4">
                 <h2 className="text-center tracking-wider mx-2 uppercase font-bold text-lg">
                     sign up using your email address
@@ -46,18 +54,19 @@ function Register() {
                 <form>
                     <div className="flex flex-col gap-4 bg-white px-4 py-4 pb-8">
                         <div>
-                            <MyTextField type="email" label="email address" />
+                            <MyTextField type="email" name="email" label="email address" />   
                         </div>
                         <div>
-                            <MyTextField type="text" label="first name" />
+                            <MyTextField type="text" name ="first_name" label="first name" />
                         </div>
                         <div>
-                            <MyTextField type="text" label="last name" />
+                            <MyTextField type="text" name="last_mame" label="last name" />
                         </div>
                         <div className="relative">
                             <MyTextField
                                 type={showPassword ? "text" : "password"}
                                 label="password"
+                                name="password"
                             />
                             <button
                                 className="absolute right-2 top-9 uppercase text-md bg-white"
@@ -82,7 +91,7 @@ function Register() {
                             <div className="flex gap-x-2 mt-4">
                                 <MySelect style={{ flexBasis: "25%" }}>
                                     {days.map((day) => (
-                                        <option key={day} value={day}>
+                                        <option key={day}  value={day}>
                                             {day}
                                         </option>
                                     ))}

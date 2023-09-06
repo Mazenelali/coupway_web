@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { GoX } from "react-icons/go";
-import DealsSide from "./sideFilter/DealsSide";
-import PriceSide from "./sideFilter/PriceSide";
-import SortBySide from "./sideFilter/SortBySide";
-import DistanceSide from "./sideFilter/DistanceSide";
+import DrawerSide from "./sideFilter/DrawerSide";
 
 function Filter() {
     const [activeFilter, setActiveFilter] = useState(null);
@@ -63,16 +60,16 @@ function Filter() {
                 </button>
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'deals' ? '-translate-x-56' : ''}`}>
-                <DealsSide />
-            </div>
-            <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'price' ? '-translate-x-56' : ''}`}>
-                <PriceSide />
+                <DrawerSide title="Deals" option = {["Preuminm Deals" , "Deals"]} />
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'sortBy' ? '-translate-x-56' : ''}`}>
-                <SortBySide />
+                <DrawerSide title="Price" option = {["Price:Low to High","Price:Hight to Low","Posted Today","Posted Within 3 Day","Posted Within 1 Week","Posted Within 1 Month"]} />
+            </div>
+            <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'price' ? '-translate-x-56' : ''}`}>
+                <DrawerSide title="Sort by" option = {["0$ - 10$","10$ - 25$","25$ - 65$","65$ - 100$","100$ - 150$","150$ +",]} />
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'distance' ? '-translate-x-56' : ''}`}>
-                <DistanceSide />
+                <DrawerSide  title="Distance" option = {["Within 1 Klm" , "Within 5 Klm" , "Within 10 Klm" , "Within 20 Klm" , "Within 50 Klm" , "Any Distance" , ]} />
             </div>
         </div>
     );

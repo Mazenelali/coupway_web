@@ -1,7 +1,55 @@
+import FoodAndDrink from "../asessts/94a0759a-1f03-43ac-96ce-e3e3d946fbba.jpeg"
+import HealthAndFitness from "../asessts/94a0759a-1f03-43ac-96ce-e3e3d946fbba.jpeg"
+import BeautyAndSpa from "../asessts/508990ca-45a0-4b92-b339-ff383f41b7f8.jpeg"
+import Fashion from "../asessts/e8d14f4f-42f3-4bc4-a8d6-a313fe69a423.jpeg"
+import Activities from "../asessts/fe12bbce-65da-483b-b6c5-cdfacff84417.jpeg"
+import GetAways from "../asessts/da699368-cda6-4f71-8bf1-2bc5b1f776a8.jpeg"
+import Electronics from "../asessts/f0bdd2b4-aba7-43de-91e3-d29577e39951.jpeg"
+import Home from "../asessts/af7e7729-6f48-482c-b5be-e0a6d681c005.jpeg"
+
+import {MdOutlineArrowForwardIos} from "react-icons/md"
 
 function Searchs() {
-    return ( <div className="pt-14 p-2">
-    search
+
+    const category = [{
+        name :"Food And Drinks",
+        image:FoodAndDrink
+    },{
+        name :"Health And Fitness",
+        image:HealthAndFitness
+    },{
+        name :"Beauty And Spa",
+        image:BeautyAndSpa
+    },{
+        name :"Fashion",
+        image:Fashion
+    },{
+        name :"Activities",
+        image:Activities
+    },{
+        name :"GetAways",
+        image:GetAways
+    },{
+        name :"Electronics",
+        image:Electronics
+    },{
+        name :"Home",
+        image:Home
+    }]
+    return ( <div className="pt-[72px] p-2 flex gap-2 flex-col">
+       { category.map(({image , name} , index)=>
+       <div key={index} className="bg-white w-full h-24 flex justify-around items-center ">
+        <div className="w-[60%] flex">
+            <p className="uppercase ml-4">{name}</p>
+        </div>
+        <div className=" w-28 h-full ">
+            <img src={image} className=" w-full h-full" alt={name} />
+        </div>
+        <div>
+            <MdOutlineArrowForwardIos className=" text-light-green"/>
+        </div>
+    </div>
+       )}
     </div> );
 }
 
