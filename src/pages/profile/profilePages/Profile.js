@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -10,9 +10,16 @@ import { MdGroups2 } from "react-icons/md";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { IoSettingsSharp } from "react-icons/io5";
 import { PiSignOut } from "react-icons/pi";
+import {useAuthUser} from 'react-auth-kit'
 
 function Profile() {
-    const [userType, setUserType] = useState("gest");
+    const auth = useAuthUser()
+
+    const [userType, setUserType] = useState("geust");
+
+    useEffect(()=>{
+        setUserType( auth()  ? "user" : "geust")
+    } , [userType])
 
     const socialLinks =
         userType === "user"
@@ -72,7 +79,7 @@ function Profile() {
             <div className="w-[120%] h-40 absolute -top-8 -left-4 z-10 bg-light-green -rotate-6 shadow-[inset_0px_-14px_20px_0px_#00000024]">
                 <div className="absolute top-14 left-11 flex items-center gap-3 text-white  rotate-6 ">
                     <CgProfile className="text-6xl" />
-                    <span className="font-bold">Hi There!</span>
+                    <span className="font-bold">Hi {userType === "user" ? auth().username.username : "There"}</span>
                 </div>
                 <div className="absolute -bottom-16 -left-4 w-[120%] h-16 bg-dark-gray opacity-20"></div>
             </div>

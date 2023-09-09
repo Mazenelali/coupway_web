@@ -15,6 +15,9 @@ module.exports = {
           'label-gray':'#9f9f9f',
           'dimmer':"#36363699"
         },
+        screens: {
+          'sm': '640px',
+        }
     },
   },
   plugins: [],

@@ -32,13 +32,13 @@ function Login() {
                 `${REACT_APP_URL}/registration/accounts/login/`,
                 dataLogin
             );
-            toast.success(`${res.data.detail}`);
+            toast.success(`${res.data.detail.message}`);
             console.log(res);
             signIn({
-                token: res.data.token,
+                token: res.data.detail.extra_data.token,
                 expiresIn: 3000,
                 tokenType: "Bearer",
-                authState: { username: res.data.detail },
+                authState: { username: res.data.detail.user_data },
             });
             setTimeout(() => {
                 navigate("/home");
