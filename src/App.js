@@ -44,7 +44,7 @@ function App() {
                     <Route path="/search" element={<Searchs />} />
                     <Route path="/notification" element={<Notification />} />
                     <Route path="/basket" element={<Favorite />} />
-                    <Route path="/product" element={<ProductPage />} />
+                    <Route path="/product/:id" element={<ProductPage />} />
                     <Route path="/profile" element={<ProfileLayout />}>
                         {/* Nested route under /profile */}
                         <Route index element={<Profile />} />

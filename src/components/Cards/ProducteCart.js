@@ -1,10 +1,10 @@
-function ProducteCart({ data, MakeSmal ,onClick }) {
+function ProducteCart({ data, MakeSmal , onClick }) {
     return (
         <div onClick={onclick}
             className={` ${
                 MakeSmal === true
-                    ? `w-[167px] h-32 bg-white`
-                    : `w-[350px] h-56 bg-gradient-to-br from-dark-gray from-20% via-light-gray via-30% to-white to-90%`
+                    ? `w-full h-32 bg-white`
+                    : `w-full h-56 bg-gradient-to-br from-dark-gray from-20% via-light-gray via-30% to-white to-90%`
             } flex items-center  justify-center `}
         >
             <div
@@ -22,8 +22,8 @@ function ProducteCart({ data, MakeSmal ,onClick }) {
                 <div
                     className={`${
                         MakeSmal === true
-                            ? `h-12 w-[170px] text-[8px]`
-                            : `h-24 w-[350px]`
+                            ? `h-12 w-full text-[8px]`
+                            : `h-24 w-full`
                     } absolute -left-1 bottom-2  px-2 text-gray-700 flex flex-col`}
                 >
                     <div className="self-end pt-1 pr-2">

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation ,useParams } from "react-router-dom";
 import Navbar from "../components/NavBar";
 import Search from "../components/Search";
 import Filter from "../components/filter/Filter";
 import Header from "../components/header";
+
 
 function Layout() {
     const [isVisibleSearchBar, setIsVisibleSearchBar] = useState(true);
@@ -14,11 +15,12 @@ function Layout() {
     const [ShowNave , setShowNav] = useState(true)
     const location = useLocation();
     const currentPath = location.pathname;
+    const params = useParams()
 
     useEffect(() => {
         setIsVisibleSearchBar(currentPath === "/home" || currentPath === "/search" );
         setIsVisibleFilterBar(currentPath === "/home")
-        setShowNav(currentPath === "/product");
+        setShowNav(currentPath === `/product/${params.id}`);
         const pathTitleMap = {
             "/notification": "Notification",
             "/basket": "Basket",
@@ -84,7 +86,7 @@ function Layout() {
                     navigateTo={backLocation}
                 />
             )}
-            <div className={` ${currentPath === "/product" ? `h-screen bg-white` : `h-[calc(100vh-32px)]  bg-light-gray`} overflow-scroll `}>
+            <div className={` ${currentPath === `/product/${params.id}` ? `h-screen bg-white` : `h-[calc(100vh-32px)]  bg-light-gray`} overflow-scroll `}>
                 <Outlet />
             </div>
             { !ShowNave && (<Navbar />)}

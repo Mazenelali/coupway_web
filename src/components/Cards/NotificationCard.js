@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
-const NotificationCard = () => {
+const NotificationCard = ({data}) => {
   return (
     <div
       
@@ -13,20 +13,20 @@ const NotificationCard = () => {
 
       <div className="ml-1 px-1 basis-[65%]">
         <div className="self-start">
-          <p className="text-sm">20% discount on sea food dishes</p>
+          <p className="text-sm">{data.highlights}</p>
           <p>
             <span className="text-md text-light-green uppercase font-semibold">
-              RestoName
+              {data.company}
             </span>
-            <span className="text-xs text-gray-500"> lorem lorem</span>
+            <span className="text-xs text-gray-500"> {data.location}</span>
           </p>
         </div>
         <div className="flex flex-row items-center justify-between mt-2">
           <div>
             <p className="text-xs uppercase">Deal Price</p>
             <p className='flex'>
-              <span className="line-through text-light-green "><span className='text-black'>100$</span></span> -{' '}
-              <span className="text-light-green">80$</span>
+              <span className="line-through text-light-green "><span className='text-black'>{data.old_price}$</span></span> -{' '}
+              <span className="text-light-green">{data.new_price}$</span>
             </p>
           </div>
           <div className="bg-light-green  py-2 px-4">
