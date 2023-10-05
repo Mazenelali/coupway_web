@@ -8,10 +8,11 @@ import {MdOutlineArrowDropDown} from "react-icons/md"
 import {ImLocation} from "react-icons/im"
 import {BiMapAlt} from "react-icons/bi"
 import Location from "./Location";
+import Map from "./Map";
 
 
 
-function DetailsProduct({ what_you_get, about_this_deal, The_fine_print ,feedbacks ,callFeedbacks }) {
+function DetailsProduct({ what_you_get, about_this_deal, The_fine_print ,feedbacks ,callFeedbacks,location }) {
     return (
         <div className="w-screen bg-white h-full  flex">
             <div className=" w-[15%] pt-10 h-full"></div>
@@ -44,6 +45,7 @@ function DetailsProduct({ what_you_get, about_this_deal, The_fine_print ,feedbac
                 <SectionsProduct
                 icon={<BiMapAlt/>}
                 title='map'
+                data ={<Map location = {location}/>}
                 />
             </div>
         </div>

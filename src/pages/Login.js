@@ -15,8 +15,6 @@ function Login() {
 
     const navigate = useNavigate();
 
-    console.log(dataLogin);
-
     function handelChange(e) {
         const { value, name } = e.target;
         setDatalogin({
@@ -24,7 +22,6 @@ function Login() {
             [name]: value,
         });
     }
-
     async function handelSubmit(e) {
         e.preventDefault();
         try {

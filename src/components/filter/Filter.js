@@ -60,16 +60,16 @@ function Filter() {
                 </button>
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'deals' ? '-translate-x-56' : ''}`}>
-                <DrawerSide title="Deals" option = {["Preuminm Deals" , "Deals"]} />
+                <DrawerSide title="Deals" option = {[{name :"Preuminm Deals"} ,{name : "Deals"}]} />
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'sortBy' ? '-translate-x-56' : ''}`}>
-                <DrawerSide title="Price" option = {["Price:Low to High","Price:Hight to Low","Posted Today","Posted Within 3 Day","Posted Within 1 Week","Posted Within 1 Month"]} />
+                <DrawerSide title="Price" option = {[{name :"Price:Low to High"},{name :"Price:Hight to Low"},{name :"Posted Today"},{name :"Posted Within 3 Day"},{name :"Posted Within 1 Week"},{name :"Posted Within 1 Month"}]} />
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'price' ? '-translate-x-56' : ''}`}>
-                <DrawerSide title="Sort by" option = {["0$ - 10$","10$ - 25$","25$ - 65$","65$ - 100$","100$ - 150$","150$ +",]} />
+                <DrawerSide title="Sort by" option = {[{name :"0$ - 10$"},{name :"10$ - 25$"},{name :"25$ - 65$"},{name :"65$ - 100$"},{name :"100$ - 150$"},{name :"150$ +"},]} />
             </div>
             <div className={`w-56 h-[calc(100vh-136px)] z-10 bg-white absolute transition-all top-[6.5rem] -right-56 ${ activeFilter === 'distance' ? '-translate-x-56' : ''}`}>
-                <DrawerSide  title="Distance" option = {["Within 1 Klm" , "Within 5 Klm" , "Within 10 Klm" , "Within 20 Klm" , "Within 50 Klm" , "Any Distance" , ]} />
+                <DrawerSide  title="Distance" option = {[{name :"Within 1 Klm"} ,{name : "Within 5 Klm"} , {name :"Within 10 Klm"} , {name :"Within 20 Klm"} , {name :"Within 50 Klm"} , {name :"Any Distance" }, ]} />
             </div>
         </div>
     );

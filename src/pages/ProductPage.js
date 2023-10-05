@@ -3,18 +3,16 @@ import LargeProductCart from "../components/ProductComponent/LargeProductCart";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useAuthUser } from "react-auth-kit";
 
 import MyButton from "../components/MyButton";
-
-
 
 function ProductPage() {
     const [dataProduct, setDataProduct] = useState(null);
     const [dataFeeback, setFeedback] = useState(null);
-    console.log(dataFeeback);
-    console.log(dataProduct);
     const params = useParams();
     const { REACT_APP_URL } = process.env;
+    const userData = useAuthUser();
 
     function getEachProduct() {
         axios
@@ -38,6 +36,41 @@ function ProductPage() {
             });
     }
 
+    async function buyDeals() {
+        const dataDeals = [
+            {
+                coupons_ordered: 1,
+                user_id: userData().username.id,
+                offer_id: dataProduct.id,
+            },
+        ];
+
+        const messagesSent = {
+            preview_url: true,
+            to: +96176488474,
+            text: {
+                body: "You have to check out this amazing messaging service https://www.whatsapp.com/",
+            },
+        };
+
+        console.log(dataDeals);
+        await axios
+            .post(`${REACT_APP_URL}/createorder/`, dataDeals)
+            .then((response) => {
+                axios
+                    .post(`https://v1/messages`, messagesSent)
+                    .then((res) => {
+                        console.log(res);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
     useEffect(() => {
         getEachProduct();
         getFeedback();
@@ -52,17 +85,19 @@ function ProductPage() {
                 highlights={dataProduct.highlights}
                 old_price={dataProduct.old_price}
                 new_price={dataProduct.new_price}
-                id = {dataProduct.id}
+                main_picture={dataProduct.main_picture}
+                id={dataProduct.id}
             />
             <DetailsProduct
                 what_you_get={dataProduct.compensations}
                 about_this_deal={dataProduct.description}
                 The_fine_print={dataProduct.fine_print}
                 feedbacks={dataFeeback}
-                callFeedbacks = {getFeedback}
+                location={dataProduct.location}
+                callFeedbacks={getFeedback}
             />
-            <div className="w-[80%] text-xl ">
-                <MyButton name="RESERVE DEAL"  />
+            <div className="w-[80%] text-xl " onClick={buyDeals}>
+                <MyButton name="RESERVE DEAL" />
             </div>
         </div>
     );
