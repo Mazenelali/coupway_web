@@ -1,4 +1,5 @@
 function ProducteCart({ data, MakeSmal , onClick }) {
+    const {REACT_APP_URL} = process.env
     return (
         <div onClick={onclick}
             className={` ${
@@ -15,7 +16,7 @@ function ProducteCart({ data, MakeSmal , onClick }) {
                 } before:-rotate-6`}
             >
                 <img
-                    src="https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    src={`http://127.0.0.1:8000${data.main_picture}`}
                     alt=""
                     className=" w-full h-full object-cover"
                 />

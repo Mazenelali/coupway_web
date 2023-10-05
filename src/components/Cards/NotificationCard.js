@@ -8,7 +8,7 @@ const NotificationCard = ({data}) => {
       className="px-1 py-2 flex flex-row w-full min-h-[90]  bg-white"
     >
       <div className="basis-[28%] max-h-[100]">
-        <img src="https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  className='w-full h-full' alt="foodimage"/>
+        <img src={data.main_picture}  className='w-full h-full' alt="foodimage"/>
       </div>
 
       <div className="ml-1 px-1 basis-[65%]">

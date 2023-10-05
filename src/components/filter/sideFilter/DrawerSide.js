@@ -9,7 +9,7 @@ function DrawerSide({title,option}) {
                    {option.map((eachOption , index)=> <button key={index} className=" flex flex-col items-start border-b-[1px] border-dark-gray ">
                         {" "}
                         <span className="mb-1 text-dark-gray ml-4">
-                            {eachOption}
+                            {eachOption.name}
                         </span>{" "}
                         
                     </button>)}

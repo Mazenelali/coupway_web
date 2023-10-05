@@ -33,7 +33,7 @@ function Home() {
                     ? []
                     : dataOffer.map((ele, index) => (
                         <div 
-                        className=" w-max"
+                        className=" w-[48.5%]"
                             key={index}
                             onClick={() => navigate(`/product/${ele.id}`)}
                         >

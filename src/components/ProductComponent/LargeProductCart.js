@@ -2,16 +2,21 @@ import Switch from "./Switch";
 import { PiShoppingCartSimple, PiShoppingCartSimpleFill } from "react-icons/pi";
 import { BsShareFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 function LargeProductCart({
     location,
     company,
     city,
+    main_picture,
     highlights,
     old_price,
     new_price,
     id,
 }) {
+    const navigate = useNavigate();
+
     const [iconofBasket, setIconofBasket] = useState(<PiShoppingCartSimple />);
 
     function addToBasket() {
@@ -30,6 +35,7 @@ function LargeProductCart({
                 highlights: highlights,
                 old_price: old_price,
                 new_price: new_price,
+                main_picture: main_picture,
                 id: id,
             };
             existingBasket.push(product);
@@ -49,15 +55,14 @@ function LargeProductCart({
 
     return (
         <div className=" w-full h-80 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] relative">
-            <div className=" absolute top-4 flex gap-3 right-6 text-3xl font-black text-light-green">
-                <span onClick={addToBasket}>{iconofBasket}</span>
-                <BsShareFill />
+            <div className=" absolute top-4 flex flex-row justify-between w-[93%] gap-3 right-6 text-3xl font-black text-light-green">
+                <span> <IoIosArrowBack  onClick={()=>navigate('/home')} /> </span> 
+                <div className="flex gap-3">
+                    <span onClick={addToBasket}>{iconofBasket}</span>
+                    <BsShareFill />
+                </div>
             </div>
-            <img
-                src="https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                className=" w-full h-56"
-            />
+            <img src={main_picture} alt="" className=" w-full h-56" />
             <div className=" h-[180px] bg-white w-[120%] absolute flex  justify-center -bottom-8 -right-5 -rotate-[8deg] ">
                 <div className=" w-full h-28 mt-[22px] ml-[48px] rotate-[8deg] flex flex-col ">
                     <div className=" py-1 ml-6 flex gap-2">
